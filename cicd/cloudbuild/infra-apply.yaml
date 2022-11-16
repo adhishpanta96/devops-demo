@@ -1,13 +1,13 @@
 steps:
   - id: "init"
-    dir: terraform
+    dir: infra
     name: "${_IMAGE}"
     entrypoint: "terraform"
     args:
       - "init"
       - "-no-color"
   - id: "workspace"
-    dir: terraform
+    dir: infra
     name: "${_IMAGE}"
     entrypoint: "terraform"
     args:
@@ -15,14 +15,14 @@ steps:
       - "select"
       - ${_ENV}
   - id: "validate"
-    dir: terraform
+    dir: infra
     name: "${_IMAGE}"
     entrypoint: "terraform"
     args:
       - "validate"
       - "-no-color"
   - id: "plan"
-    dir: terraform
+    dir: infra
     name: "${_IMAGE}"
     entrypoint: "terraform"
     args:
@@ -31,7 +31,7 @@ steps:
       - "-var-file=${_ENV}.tfvars"
       - "-lock=false"
   - id: "apply"
-    dir: terraform
+    dir: infra
     name: "${_IMAGE}"
     entrypoint: "terraform"
     args:
