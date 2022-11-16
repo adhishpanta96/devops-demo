@@ -9,7 +9,7 @@ resource "google_cloudfunctions_function" "function" {
   trigger_http          = true
 
   environment_variables = {
-    ENV = var.env
+    ENV = var.environment
   }
 
   entry_point           = "hello_world"
