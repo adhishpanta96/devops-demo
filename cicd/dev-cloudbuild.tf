@@ -33,7 +33,7 @@ resource "google_cloudbuild_trigger" "dev-infra-apply-cloudbuild-trigger" {
 
   substitutions   = {
     _IMAGE        = "${var.deploy_image}"
-    _ENV          = "main"
+    _ENV          = "dev"
   }
 
   github {
