@@ -1,0 +1,48 @@
+steps:
+  - id: "init"
+    dir: terraform
+    name: "${_IMAGE}"
+    entrypoint: "terraform"
+    args:
+      - "init"
+      - "-no-color"
+  - id: "workspace"
+    dir: terraform
+    name: "${_IMAGE}"
+    entrypoint: "terraform"
+    args:
+      - "workspace"
+      - "select"
+      - ${_ENV}
+  - id: "validate"
+    dir: terraform
+    name: "${_IMAGE}"
+    entrypoint: "terraform"
+    args:
+      - "validate"
+      - "-no-color"
+  - id: "plan"
+    dir: terraform
+    name: "${_IMAGE}"
+    entrypoint: "terraform"
+    args:
+      - "plan"
+      - "-no-color"
+      - "-var-file=${_ENV}.tfvars"
+      - "-lock=false"
+  - id: "apply"
+    dir: terraform
+    name: "${_IMAGE}"
+    entrypoint: "terraform"
+    args:
+      - "apply"
+      - "-var-file=${_ENV}.tfvars"
+      - "-auto-approve"
+      - "-no-color"
+      - "-lock=false"
+logsBucket: 'adhish-devops-demo-logs-bucket'
+substitutions:
+  _IMAGE: placeholder
+  _ENV: placeholder
+options:
+  logging: GCS_ONLY
