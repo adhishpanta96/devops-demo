@@ -1,6 +1,6 @@
 steps:
   - id: "init"
-    dir: terraform
+    dir: infra
     name: "${_IMAGE}"
     entrypoint: "terraform"
     args:
@@ -15,7 +15,7 @@ steps:
       - "select"
       - ${_ENV}
   - id: "validate"
-    dir: terraform
+    dir: infra
     name: "${_IMAGE}"
     entrypoint: "terraform"
     args:
