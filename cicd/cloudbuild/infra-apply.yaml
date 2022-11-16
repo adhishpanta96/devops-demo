@@ -40,9 +40,9 @@ steps:
       - "-auto-approve"
       - "-no-color"
       - "-lock=false"
-logsBucket: 'adhish-devops-demo-logs-bucket'
+# logsBucket: 'adhish-devops-demo-logs-bucket'
 substitutions:
   _IMAGE: placeholder
   _ENV: placeholder
 options:
-  logging: GCS_ONLY
+  logging: CLOUD_LOGGING_ONLY

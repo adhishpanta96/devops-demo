@@ -3,9 +3,6 @@ resource "google_cloudbuild_trigger" "dev-infra-plan-cloudbuild-trigger" {
   project         = "${var.project}"
   name            = "dev-infra-plan"
   filename        = "cicd/cloudbuild/infra-plan.yaml"
-  ignored_files   = [
-    "cicd/*"
-  ]
 
   tags = ["dev"]
 
@@ -30,9 +27,7 @@ resource "google_cloudbuild_trigger" "dev-infra-apply-cloudbuild-trigger" {
   project         = "${var.project}"
   name            = "dev-infra-apply"
   filename        = "cicd/cloudbuild/infra-apply.yaml"
-  ignored_files   = [
-    "cicd/*"
-  ]
+
 
   tags = ["dev"]
 

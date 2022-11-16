@@ -32,9 +32,9 @@ steps:
       - "-var-file=${_ENV}.tfvars"
       - "-lock=false"
 
-logsBucket: 'adhish-devops-demo-logs-bucket'
+# logsBucket: 'CLOUD'
 substitutions:
   _IMAGE: placeholder
   _ENV: placeholder
 options:
-  logging: GCS_ONLY
+  logging: CLOUD_LOGGING_ONLY
