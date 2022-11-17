@@ -4,10 +4,3 @@ resource "google_storage_bucket" "bucket" {
   location = var.region
 }
 
-resource "google_storage_bucket_object" "archive" {
-  name   = "app.zip"
-  bucket = google_storage_bucket.bucket.name
-  source = "../app.zip"
-}
-
-
