@@ -1,6 +1,6 @@
 resource "google_storage_bucket" "bucket" {
   project  = var.project_id
-  name     = "${var.environment}-demo-bucket"
+  name     = "adhish-demo-${var.environment}-demo-bucket"
   location = var.region
 }
 
@@ -9,3 +9,5 @@ resource "google_storage_bucket_object" "archive" {
   bucket = google_storage_bucket.bucket.name
   source = "../app.zip"
 }
+
+
