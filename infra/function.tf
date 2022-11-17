@@ -1,4 +1,5 @@
 resource "google_cloudfunctions_function" "function" {
+  project = var.project_id
   name        = "function-test"
   description = "My function"
   runtime     = "python38"
