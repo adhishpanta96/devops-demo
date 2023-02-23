@@ -52,3 +52,4 @@ resource "google_cloudbuild_trigger" "prod-infra-apply-cloudbuild-trigger" {
   service_account = "projects/adhish-demo-foundations/serviceAccounts/adhish-demo-prod-sa@adhish-demo-foundations.iam.gserviceaccount.com"
   include_build_logs = "INCLUDE_BUILD_LOGS_WITH_STATUS"
 }
+
